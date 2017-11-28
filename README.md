@@ -109,7 +109,7 @@ If you try this request
 
      http://localhost:7001/ords/
 
-You will get a **404**. This is because there is still no schema, neither database object (table, procedure, etc.) with the **REST services enabled**. Probably the first thing you want to do is to create a simple table and populate it with some data. Unfortunately the user default user **pdbadmin** created in your database has not enough privileges to create a table. By default our **pdbadmin** user is granted with the **PDB_DBA** role, and no privileges are provided with this role. You can fix this granting the user the **RESOURCE** role, see [ddl-scripts/grant_resource_to_pdbadmin_user.sql](ddl-scripts/grant_resource_to_pdbadmin_user.sql). Nevertheless keep in mind that Oracle recommends to design your own roles, see the docs [here](https://docs.oracle.com/database/122/DBSEG/configuring-privilege-and-role-authorization.htm#DBSEG-GUID-AB5E62DB-7E2A-4B5A-BA96-A2BD2DF15275). Your user still does not have privileges on the tablespace **USERS**, so you will also get an _ORA-01950_ error. You can give him 100M of quota running [ddl-scripts/give_quota_to_pdbadmin_on_users.sql]. Summarizing:  
+You will get a **404**. This is because there is still no schema, neither database object (table, procedure, etc.) with the **REST services enabled**. Probably the first thing you want to do is to create a simple table and populate it with some data. Unfortunately the user default user **pdbadmin** created in your database has not enough privileges to create a table. By default our **pdbadmin** user is granted with the **PDB_DBA** role, and no privileges are provided with this role. You can fix this granting the user the **RESOURCE** role, see [ddl-scripts/grant_resource_to_pdbadmin_user.sql](ddl-scripts/grant_resource_to_pdbadmin_user.sql). Nevertheless keep in mind that Oracle recommends to design your own roles, see the docs [here](https://docs.oracle.com/database/122/DBSEG/configuring-privilege-and-role-authorization.htm#DBSEG-GUID-AB5E62DB-7E2A-4B5A-BA96-A2BD2DF15275). Your user still does not have privileges on the tablespace **USERS**, so you will also get an _ORA-01950_ error. You can give him 100M of quota running [ddl-scripts/give_quota_to_pdbadmin_on_users.sql](ddl-scripts/give_quota_to_pdbadmin_on_users.sql). Summarizing:  
 
      $ docker cp ddl-scripts/grant_resource_to_pdbadmin_user.sql <your database container name>:/home/oracle
      $ docker exec -ti <your database container> sqlplus sys/<your sys password>@//localhost:1521/PDB as SYSDBA @/home/oracle/grant_resource_to_pdbadmin_user.sql
@@ -138,8 +138,9 @@ We are almost done! The final step would be to enable the rest access on your ta
 The problem is that the [ORDS.ENABLE_OBJECT](https://docs.oracle.com/cd/E56351_01/doc.30/e87809/ORDS-reference.htm#AELIG90183) is an [invoker's rights procedure](https://docs.oracle.com/database/121/DBSEG/glossary.htm#GUID-68637D3F-FA77-453D-962B-172202ACC23C), so it is being executed with the privileges of our current user **pdbadmin**. When a user runs an invoker's rights procedure, Oracle Database checks it to ensure that the procedure owner has either the INHERIT PRIVILEGES privilege on the invoking user, or if the owner has been granted the INHERIT ANY PRIVILEGES privilege. For fixing this you can run [ddl-scripts/grant_inherit_privileges.sql](ddl-scripts/grant_inherit_privileges.sql):
 
      $ docker cp ddl-scripts/grant_inherit_privileges.sql <your database container>:/home/oracle
-     $ docker exec -ti <your database container> sqlplus pdbadmin/<your pdbadmin password>@//localhost:1521/PDB @/home/oracle/grant_inherit_
-privileges.sql
+     $ docker exec -ti <your database container> sqlplus pdbadmin/<your pdbadmin password>@//localhost:1521/PDB @/home/oracle/grant_inherit_privileges.sql
+
+For more info about invoker's rights have a look at the [docs](https://docs.oracle.com/database/121/DBSEG/dr_ir.htm#DBSEG658)
 
 Now you can enable the REST services on the customer table:
 
