@@ -104,7 +104,7 @@ Finally Weblogic will pick up the ords.war from its **autodeploy** folder and wi
      Oracle REST Data Services version : 3.0.12.263.15.32
      Oracle REST Data Services server info: WebLogic Server 12.2.1.0.0 Tue Oct 6 10:05:47 PDT 2015 1721936 WebLogic JAX-RS 2.0 Portable Server / Jersey 2.x integration module 
 
-#Test your installation
+# Test your installation
 If you try this request
 
      http://localhost:7001/ords/
