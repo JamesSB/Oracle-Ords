@@ -1,0 +1,1 @@
+docker run --name wls_ords --network=SampleNET --env-file=.env -p 7001:7001 -p 8453:8453 -p 7002:7002 1221-domain-ords-autodeploy

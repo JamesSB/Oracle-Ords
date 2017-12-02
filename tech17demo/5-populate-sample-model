@@ -1,0 +1,3 @@
+docker cp ../ddl-scripts/populate_sample_model.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/populate_sample_model.sql
+

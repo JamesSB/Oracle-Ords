@@ -1,0 +1,8 @@
+docker cp ../ddl-scripts/grant_resource_to_pdbadmin.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus sys/tech17dbPASSWD@//localhost:1521/PDB as SYSDBA @/home/oracle/grant_resource_to_pdbadmin.sql
+
+docker cp ../ddl-scripts/give_quota_to_pdbadmin_on_users.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus sys/tech17dbPASSWD@//localhost:1521/PDB as SYSDBA @/home/oracle/give_quota_to_pdbadmin_on_users.sql
+
+docker cp ../ddl-scripts/grant_inherit_privileges.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/grant_inherit_privileges.sql

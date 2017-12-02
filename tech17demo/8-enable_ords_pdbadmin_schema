@@ -1,0 +1,2 @@
+docker cp ../ddl-scripts/sample-api/enable_pdbadmin_schema.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/enable_pdbadmin_schema.sql

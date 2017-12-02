@@ -1,0 +1,6 @@
+docker cp ../container-scripts/create_user_and_group.py wls_ords:/u01/oracle
+docker exec -ti wls_ords wlst /u01/oracle/create_user_and_group.py john welcome1 first_line_support
+docker exec -ti wls_ords wlst /u01/oracle/create_user_and_group.py tim welcome1 second_line_support
+
+docker cp ../container-scripts/create_user_assign_to_groups.py wls_ords:/u01/oracle
+docker exec -ti wls_ords wlst /u01/oracle/create_user_assign_to_groups.py test welcome1 first_line_support 300
