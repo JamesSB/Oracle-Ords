@@ -20,7 +20,7 @@ print ('group ' + group + ' created')
 
 defaultAuthenticator.addMemberToGroup(group,user)
 
-print ('user ' + user + ' assigmed to group ' + group) 
+print ('user ' + user + ' assigned to group ' + group) 
 
 disconnect()
 exit()

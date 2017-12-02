@@ -1,0 +1,2 @@
+docker cp ../container-scripts/test_user_member_of_multiple_groups.py wls_ords:/u01/oracle
+docker exec -ti wls_ords wlst /u01/oracle/test_user_member_of_multiple_groups.py test welcome1 first_line_support 300

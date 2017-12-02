@@ -1,0 +1,3 @@
+docker cp ../container-scripts/set_log_platform_level.py wls_ords:/u01/oracle
+docker exec -ti wls_ords wlst /u01/oracle/set_log_platform_level.py Trace oracle.dbtools FINEST
+

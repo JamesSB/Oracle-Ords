@@ -1,0 +1,2 @@
+docker cp ../container-scripts/enable_ssl_admin_server.py wls_ords:/u01/oracle
+docker exec wls_ords wlst /u01/oracle/enable_ssl_admin_server.py

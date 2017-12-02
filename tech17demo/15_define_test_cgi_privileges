@@ -1,0 +1,2 @@
+docker cp ../ddl-scripts/sample-api/security/define_test_cgi_privilege.sql tech17db12se:/home/oracle
+docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/define_test_cgi_privilege.sql

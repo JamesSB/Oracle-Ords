@@ -4,7 +4,6 @@ DECLARE
   l_priv_patterns owa.vc_arr;
 BEGIN
   l_priv_roles(1) := 'second_line_support';
-  --l_priv_roles(2) := 'oauth_client_credentials_role';
   l_priv_modules(1) := 'sls_module';
 
   ords.define_privilege(
