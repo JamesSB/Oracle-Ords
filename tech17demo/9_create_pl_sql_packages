@@ -1,11 +1,11 @@
-docker cp ../ddl-scripts/sample-api/first_line_support_package/create_first_line_support_package.sql tech17db12se:/home/oracle
-docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_first_line_support_package.sql
+docker cp ../ddl-scripts/sample-api/first_line_support_package/create_first_line_support_package.sql tech17db12ee:/home/oracle
+docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_first_line_support_package.sql
 
-docker cp ../ddl-scripts/sample-api/first_line_support_package/create_first_line_support_package_body.sql tech17db12se:/home/oracle
-docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_first_line_support_package_body.sql
+docker cp ../ddl-scripts/sample-api/first_line_support_package/create_first_line_support_package_body.sql tech17db12ee:/home/oracle
+docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_first_line_support_package_body.sql
 
-docker cp ../ddl-scripts/sample-api/second_line_support_package/create_second_line_support_package.sql tech17db12se:/home/oracle
-docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_second_line_support_package.sql
+docker cp ../ddl-scripts/sample-api/second_line_support_package/create_second_line_support_package.sql tech17db12ee:/home/oracle
+docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_second_line_support_package.sql
 
-docker cp ../ddl-scripts/sample-api/second_line_support_package/create_second_line_support_package_body.sql tech17db12se:/home/oracle
-docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_second_line_support_package_body.sql
+docker cp ../ddl-scripts/sample-api/second_line_support_package/create_second_line_support_package_body.sql tech17db12ee:/home/oracle
+docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_second_line_support_package_body.sql

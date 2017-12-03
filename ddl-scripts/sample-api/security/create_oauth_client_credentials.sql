@@ -5,7 +5,7 @@ BEGIN
     p_owner           => 'lurodrig',
     p_description     => 'Luis client credentials for OAUTH2-ORDS tech17demo.',
     p_support_email   => 'luis.rodriguez.fernandez@cern.ch',
-    p_privilege_names => '-'
+    p_privilege_names => 'second_line_support.privilege'
   );
   COMMIT;
 

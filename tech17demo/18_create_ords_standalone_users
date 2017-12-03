@@ -1,0 +1,2 @@
+docker exec -it ords_standalone java -jar /opt/oracle/ords/ords.war user john first_line_support
+docker exec -it ords_standalone java -jar /opt/oracle/ords/ords.war user tim second_line_support

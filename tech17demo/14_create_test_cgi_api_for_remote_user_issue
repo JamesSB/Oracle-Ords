@@ -1,2 +1,2 @@
-docker cp ../ddl-scripts/sample-api/create_test_cgi_env_api.sql tech17db12se:/home/oracle
-docker exec -ti tech17db12se sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_test_cgi_env_api.sql
+docker cp ../ddl-scripts/sample-api/create_test_cgi_env_api.sql tech17db12ee:/home/oracle
+docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_test_cgi_env_api.sql

@@ -1,0 +1,1 @@
+docker run --name tech17db12ee --network=SampleNET -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=tech17dbPASSWD -e ORACLE_SID=SID -e ORACLE_PDB=PDB -v /media/hdd/tech17-demo/db_mount_point_12_se oracle/database:12.2.0.1-ee

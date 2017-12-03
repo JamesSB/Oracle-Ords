@@ -1,0 +1,10 @@
+docker run --name ords_standalone \
+--network=SampleNET \
+-p 8888:8888 \
+-e ORACLE_HOST=tech17db12ee \
+-e ORACLE_PORT=1521 \
+-e ORACLE_SERVICE=PDB \
+-e ORACLE_PWD=tech17dbPASSWD \
+-e ORDS_PWD=changeit \
+-v /media/hdd/tech17-demo/ords_standalone_mount_point:/opt/oracle/ords/config/ords \
+oracle/restdataservices:3.0.12
