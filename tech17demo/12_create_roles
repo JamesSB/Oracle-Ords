@@ -3,6 +3,3 @@ docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PD
 
 docker cp ../ddl-scripts/sample-api/security/create_second_line_support_role.sql tech17db12ee:/home/oracle
 docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_second_line_support_role.sql
-
-docker cp ../ddl-scripts/sample-api/security/create_oauth_client_credentials_role.sql tech17db12ee:/home/oracle
-docker exec -ti tech17db12ee sqlplus pdbadmin/tech17dbPASSWD@//localhost:1521/PDB @/home/oracle/create_oauth_client_credentials_role.sql
